@@ -1,6 +1,6 @@
 ## Create a server
 resource "hcloud_server" "gravitsapa" {
-  name        = "domain"
+  name        = "gravitsapa"
   image       = "ubuntu-22.04"
   server_type = "${var.tiny}"
   backups     = "false"
