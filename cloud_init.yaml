@@ -1,0 +1,35 @@
+#cloud-config
+# https://cloudinit.readthedocs.io/en/latest/reference/examples.html
+
+write_files:
+  - content: |
+      Acquire::ForceIPv4 "true";
+    path: /etc/apt/apt.conf.d/99force-ipv4
+    owner: root:root
+    permissions: "0644"
+
+package_update: ${package_update}
+package_upgrade: ${package_upgrade}
+packages:
+  - fail2ban
+  - tzdata
+  - rsync
+  - less
+  - iotop
+  - iftop
+  - htop
+  - mc
+  - tcpdump
+  - wget
+  - iptraf
+  - logtail
+  - screen
+  - netcat
+  - sshfs
+  - pigz
+  - ncdu
+  - net-tools
+  - zip
+  - unzip
+  - sysfsutils
+  - telnet
