@@ -23,7 +23,7 @@ resource "hcloud_server" "gravitsapa" {
 # Network attachment
 resource "hcloud_server_network" "srvnetwork" {
   server_id  = hcloud_server.gravitsapa.id
-  network_id = data.terraform_remote_state.network.outputs.network_ids["Ashburn-DC1-01"].id
+  network_id = data.terraform_remote_state.network.outputs.network_ids["Falkenstein"].id
 }
 
 ## Placement Group
