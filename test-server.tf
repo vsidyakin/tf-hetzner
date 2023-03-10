@@ -14,7 +14,7 @@ resource "hcloud_server" "gravitsapa" {
   }
   labels = {
     "monitoring" = "monitoring_yes",
-    "firewall_basic" = "allow_basics"
+    #"firewall_basic" = "allow_basics"
     "firewall_ssh" = "private-ds",
     "firewall_base" = "base-monitoring",
     "firewall_ips" = "allow_basics_ips"
