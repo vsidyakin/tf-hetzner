@@ -1,8 +1,8 @@
 ## Create a server
 resource "hcloud_server" "gravitsapa" {
-  name        = "gravitsapa"
+  name        = "gravitsapa.vlad.linkpc.net"
   image       = "ubuntu-22.04"
-  server_type = "${var.tiny}"
+  server_type = "${var.standard}"
   backups     = "false"
   placement_group_id = hcloud_placement_group.placement-group.id
   datacenter  = "fsn1-dc14"
@@ -13,10 +13,10 @@ resource "hcloud_server" "gravitsapa" {
     ipv6_enabled = false
   }
   labels = {
-    "monitoring" = "monitoring_yes",
+    #"monitoring" = "monitoring_yes",
     #"firewall_basic" = "allow_basics"
-    "firewall_ssh" = "private-ds",
-    "firewall_base" = "base-monitoring",
+    #"firewall_ssh" = "private-ds",
+    #"firewall_base" = "base-monitoring",
     "firewall_ips" = "allow_basics_ips"
   }
 }
