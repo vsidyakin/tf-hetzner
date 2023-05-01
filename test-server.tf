@@ -2,7 +2,7 @@
 resource "hcloud_server" "gravitsapa" {
   name        = "git.vlad.linkpc.net"
   image       = "debian-11"
-  server_type = "${var.tier1}"
+  server_type = "${var.tiny}"
   backups     = "false"
   placement_group_id = hcloud_placement_group.placement-group.id
   datacenter  = "fsn1-dc14"
