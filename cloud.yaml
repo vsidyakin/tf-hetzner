@@ -7,12 +7,12 @@ timezone: Europe/Athens
 #package_upgrade: true
 #package_reboot_if_required: true
 users:
-# Create new user `steve`
+# Create new user `vlads`
   - name: vlads
     groups: sudo, www-data
     lock_passwd: false
     shell: /bin/bash
-    #passwd: $6$UnXq642da9EfkQfH$WyjGklLI/RQy6/ss7/v5MAmrm0MKMnJaRLmx0FYCuLfBvcetHp6Rb.DL9djJ50C56293m2cA11E3PhnTRsa3B.
+    passwd: $6$UnXq642da9EfkQfH$WyjGklLI/RQy6/ss7/v5MAmrm0MKMnJaRLmx0FYCuLfBvcetHp6Rb.DL9djJ50C56293m2cA11E3PhnTRsa3B.
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDC4JTuMlLr9CvQBM7Dc9V+2bGKzb2QgooT3HVLfwMoqghtYp5BsgaDmgdfOatUC4a8lGsVCLaVWZtcoyBqiuDc2cMkgQ8fwQso54HKQWvC7TteDKf6vgrILrdWrmnWMhMEBLGt7kTaU+qZlYsWnaR4PSua3o6KRN1GDuqZqAIvSro3F6jxXWqfTsFkEYzBCx2AA6c++kJIsUREOW+aiqFJaznvk3iGHN9Mf6zw3FKSJ2q8nqU0CZOspJAM/5/KfPbRghHXfNz/0BPkiSPMobB/XLnRkTSyOiJgR0poWkm2Yjrpfdky/bPJR0kYR87hYCixXUlk1i1XIxS/W09j8sBHcRrg2SdpMc2zZY1Va/xizf3SngaZBEFFJN3LfHe3A9zxNVQn1rL9KGYmtCnlvGndB6kaK5lO5xyPk87iThF1jde0sxfuFw+yufztzaIRmg9Uy4CTg2m5yekswFC4UtRhrd7Po97Q4haQdt5BwUGsQGxyxN0vz/ipeq5DY8ltdBE= vlad@fedora
 write_files:
@@ -26,7 +26,6 @@ write_files:
           AllowTcpForwarding no
           X11Forwarding no
     append: true
-
 package_update: true
 package_upgrade: true
 packages:
@@ -70,14 +69,6 @@ runcmd:
   - chage -d 0 vlads
 # Test :-)
   - touch /home/vlads/test.txt
-  # - apt-get update -y
-  # - mkdir -m 0755 -p /etc/apt/keyrings
-  # - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-  # - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg trusted=yes] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  # - chmod a+r /etc/apt/keyrings/docker.gpg
-  # - apt-get update -y
-  # - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-  # - service docker start
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
   - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh | bash
 # The new server's private/public host keys
