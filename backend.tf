@@ -3,7 +3,7 @@ terraform {
     organization = "Hetzner-GMBH-infra"
 
     workspaces {
-      name = "tf-hetzner"
+      name = "gravitsapa"
     }
   }
 }

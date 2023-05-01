@@ -4,7 +4,7 @@ data "terraform_remote_state" "network" {
   config = {
     organization = "Hetzner-GMBH-infra"
     workspaces = {
-      name = "tf-network-hcloud"
+      name = "networking"
     }
   }
 }
