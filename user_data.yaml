@@ -57,3 +57,5 @@ runcmd:
   # - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
   # - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh | bash
   - touch /home/test.txt
+  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
+  - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh | bash
