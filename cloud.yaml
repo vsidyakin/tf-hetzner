@@ -71,7 +71,7 @@ runcmd:
   - touch /home/vlads/test.txt
 # Install Docker
   #- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
-  - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh | bash
+  - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh | bash
 # The new server's private/public host keys
 # ssh_keys:
 #   ed25519_private: |
