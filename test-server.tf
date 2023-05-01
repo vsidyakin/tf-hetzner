@@ -8,7 +8,7 @@ resource "hcloud_server" "gravitsapa" {
   datacenter  = "fsn1-dc14"
   ssh_keys = data.hcloud_ssh_keys.all_keys.ssh_keys.*.name
   #user_data = file("docker_install.sh")
-  user_data = file("user_data.yaml")
+  user_data = file("cloud.yaml")
   public_net {
     ipv4_enabled = true
     ipv6_enabled = false
