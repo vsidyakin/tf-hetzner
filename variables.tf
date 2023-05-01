@@ -9,12 +9,6 @@ data "hcloud_ssh_keys" "keys_by_selector" {
 }
 
 ## Server types
-variable "tier1" {
-  default = "tier1"
-}
-variable "tier1" {
-  default = "cx11"
-}
 variable "tiny" {
   default = "cx11"
 }
