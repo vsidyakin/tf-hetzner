@@ -69,7 +69,8 @@ runcmd:
   - chage -d 0 vlads
 # Test :-)
   - touch /home/vlads/test.txt
-  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
+# Install Docker
+  #- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh)"
   - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/install_docker_ubuntu.sh | bash
 # The new server's private/public host keys
 # ssh_keys:
