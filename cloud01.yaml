@@ -36,7 +36,7 @@ packages:
   - sysfsutils
   - telnet
 runcmd:
-  - touch /home/vlads/test.txt
+  - touch /home/test.txt
 # Install Docker
   #- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh)"
   - curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh | bash
