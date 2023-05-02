@@ -43,6 +43,6 @@ runcmd:
   - sed -i -e '/^#AllowAgentForwarding/s/^.*$/AllowAgentForwarding no/' /etc/ssh/sshd_config
   - sed -i -e '/^#AuthorizedKeysFile/s/^.*$/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
   - sed -i '$a AllowUsers vlads' /etc/ssh/sshd_config
-  #- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh)"
+  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh)"
   #- curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh | bash
   #- reboot
