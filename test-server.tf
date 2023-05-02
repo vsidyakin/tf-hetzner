@@ -1,4 +1,4 @@
-### Create a server
+## Create a server
 resource "hcloud_server" "gravitsapa" {
   name        = "git.vlad.linkpc.net"
   image       = "debian-11"
