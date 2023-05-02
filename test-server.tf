@@ -1,4 +1,4 @@
-## Create a server
+##### Create a server
 resource "hcloud_server" "test-server01" {
   name        = "test01.vlad.linkpc.net"
   image       = "debian-11"
