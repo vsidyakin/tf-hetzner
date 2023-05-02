@@ -1,4 +1,3 @@
-## Use to install softaware and/or configure
 #cloud-config
 users:
   - name: vlads
@@ -7,8 +6,6 @@ users:
     shell: /bin/bash
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDC4JTuMlLr9CvQBM7Dc9V+2bGKzb2QgooT3HVLfwMoqghtYp5BsgaDmgdfOatUC4a8lGsVCLaVWZtcoyBqiuDc2cMkgQ8fwQso54HKQWvC7TteDKf6vgrILrdWrmnWMhMEBLGt7kTaU+qZlYsWnaR4PSua3o6KRN1GDuqZqAIvSro3F6jxXWqfTsFkEYzBCx2AA6c++kJIsUREOW+aiqFJaznvk3iGHN9Mf6zw3FKSJ2q8nqU0CZOspJAM/5/KfPbRghHXfNz/0BPkiSPMobB/XLnRkTSyOiJgR0poWkm2Yjrpfdky/bPJR0kYR87hYCixXUlk1i1XIxS/W09j8sBHcRrg2SdpMc2zZY1Va/xizf3SngaZBEFFJN3LfHe3A9zxNVQn1rL9KGYmtCnlvGndB6kaK5lO5xyPk87iThF1jde0sxfuFw+yufztzaIRmg9Uy4CTg2m5yekswFC4UtRhrd7Po97Q4haQdt5BwUGsQGxyxN0vz/ipeq5DY8ltdBE= v
-package_update: true
-package_upgrade: true
 packages:
   - ca-certificates
   - curl
@@ -35,8 +32,17 @@ packages:
   - unzip
   - sysfsutils
   - telnet
+package_update: true
+package_upgrade: true
 runcmd:
-  - touch /home/test.txt
-# Install Docker
+  #- sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i -e '/^PasswordAuthentication/s/^.*$/PasswordAuthentication no/' /etc/ssh/sshd_config
+  - sed -i -e '/^X11Forwarding/s/^.*$/X11Forwarding no/' /etc/ssh/sshd_config
+  - sed -i -e '/^#MaxAuthTries/s/^.*$/MaxAuthTries 2/' /etc/ssh/sshd_config
+  - sed -i -e '/^#AllowTcpForwarding/s/^.*$/AllowTcpForwarding no/' /etc/ssh/sshd_config
+  - sed -i -e '/^#AllowAgentForwarding/s/^.*$/AllowAgentForwarding no/' /etc/ssh/sshd_config
+  - sed -i -e '/^#AuthorizedKeysFile/s/^.*$/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
+  - sed -i '$a AllowUsers vlads' /etc/ssh/sshd_config
   #- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh)"
   #- curl -fsSL https://raw.githubusercontent.com/vsidyakin/remote-scripts/main/debian_install_docker.sh | bash
+  #- reboot
