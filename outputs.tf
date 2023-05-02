@@ -3,5 +3,5 @@ output "network_id" {
 }
 
 output "server_ip_gravitsapa" {
-  value = hcloud_server.gravitsapa.ipv4_address
+  value = hcloud_server.test-server01.ipv4_address
 }
